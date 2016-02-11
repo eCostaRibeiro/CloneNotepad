@@ -20,7 +20,6 @@ public class FileOpenController {
     public String FileOpenControllerMethod(File filePath) throws FileNotFoundException, IOException{
         fileReader = new FileReader();
         return fileReader.getFileContentScanner(filePath);
-        //return fileReader.getFileContentInputStream(filePath.getPath());
     }
     
     

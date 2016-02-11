@@ -77,9 +77,6 @@ public final class ExtensionFileFilter  extends FileFilter{
 //    }
     
     
-    private static String TYPE_UNKNOWN = "Type Unknown";
-    private static String HIDDEN_FILE = "Hidden File";
-
     private String description = null;
     private String fullDescription = null;
     private boolean useExtensionsInDescription = true;

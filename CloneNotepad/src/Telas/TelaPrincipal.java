@@ -110,12 +110,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
         fileSave.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         fileSave.setMnemonic('s');
         fileSave.setText("Save");
+        fileSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fileSaveActionPerformed(evt);
+            }
+        });
         fileMenu.add(fileSave);
 
         fileSaveAs.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         fileSaveAs.setMnemonic('a');
         fileSaveAs.setText("Save As ...");
         fileSaveAs.setDisplayedMnemonicIndex(5);
+        fileSaveAs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fileSaveAsActionPerformed(evt);
+            }
+        });
         fileMenu.add(fileSaveAs);
         fileMenu.add(jSeparator1);
 
@@ -228,7 +238,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void fileOpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileOpenActionPerformed
         try {
-            masterController.OpenFile(this);
+            masterController.OpenFileMethod(this);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -239,6 +249,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void helpAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpAboutActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_helpAboutActionPerformed
+
+    private void fileSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileSaveActionPerformed
+        try {
+            masterController.SaveFileMethod(this);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_fileSaveActionPerformed
+
+    private void fileSaveAsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileSaveAsActionPerformed
+        try {
+            masterController.SaveFileAsMethod(this);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_fileSaveAsActionPerformed
 
     /**
      * @param args the command line arguments

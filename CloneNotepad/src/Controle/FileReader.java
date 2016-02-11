@@ -22,13 +22,15 @@ public class FileReader {
         StringBuilder builder;
         
         fileInputStream = new FileInputStream(filePath);
-        scannerFile = new Scanner(fileInputStream);
+        scannerFile = new Scanner(fileInputStream).useDelimiter("\\.,");
         builder = new StringBuilder();
         
         try {
             while (scannerFile.hasNextLine()) {
                 builder.append(scannerFile.nextLine());
-                //builder.append("\n");
+                if(scannerFile.hasNextLine()){
+                    builder.append("\n");
+                }
             }
             return builder.toString();
         } catch (Exception e) {
