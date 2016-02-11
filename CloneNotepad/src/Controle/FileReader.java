@@ -28,7 +28,7 @@ public class FileReader {
         try {
             while (scannerFile.hasNextLine()) {
                 builder.append(scannerFile.nextLine());
-                builder.append("\n");
+                //builder.append("\n");
             }
             return builder.toString();
         } catch (Exception e) {
@@ -38,16 +38,4 @@ public class FileReader {
             scannerFile.close();
         }
     }
-    
-//    public String getFileContentInputStream (String filePath) throws FileNotFoundException, IOException{
-//        static String readFile(String path, Charset encoding) throws IOException{
-//            byte[] encoded = Files.readAllBytes(Paths.get(path));
-//            return encoding.decode(ByteBuffer.wrap(encoded)).toString();
-//        }
-//        String content = readFile(filePath, StandardCharsets.UTF_8);
-//        
-//        
-//        
-//        //return null;
-//    }
 }

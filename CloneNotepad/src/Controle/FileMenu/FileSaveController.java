@@ -9,6 +9,6 @@ package Controle.FileMenu;
  *
  * @author eduar_000
  */
-public class FileSave {
+public class FileSaveController {
     
 }
