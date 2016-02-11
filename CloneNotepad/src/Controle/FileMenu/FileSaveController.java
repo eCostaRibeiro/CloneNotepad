@@ -17,17 +17,17 @@ import javax.swing.JFileChooser;
 public class FileSaveController {
     private FileSaver fileSaver;
     
-    public void FileSaveControllerMethod(File filePatch, String content) throws IOException{
+    public void FileSaveControllerMethod(File file, String content) throws IOException{
         fileSaver = new FileSaver();
         
-        fileSaver.setFileContent(filePatch, content);
+        fileSaver.setFileContent(file, content);
     }
     
     
     public void FileSaveAsControllerMethod(JFileChooser chooser, String textAreaContent) throws IOException{
         fileSaver = new FileSaver();
         File localFile = chooser.getSelectedFile();
-        String fileName = chooser.getSelectedFile().getName();
+        String fileName = chooser.getSelectedFile().getAbsolutePath();
         
         fileSaver.createLocalFile(localFile, fileName, textAreaContent);
     }
