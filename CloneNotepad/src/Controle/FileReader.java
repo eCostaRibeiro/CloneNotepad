@@ -22,7 +22,7 @@ public class FileReader {
         StringBuilder builder;
         
         fileInputStream = new FileInputStream(filePath);
-        scannerFile = new Scanner(fileInputStream).useDelimiter("\\.,");
+        scannerFile = new Scanner(fileInputStream);
         builder = new StringBuilder();
         
         try {
